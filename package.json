@@ -1,23 +1,51 @@
 {
   "name": "find-a-trip",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "description": "Find a trip.",
+  "author": {
+    "name": "Simon Relet",
+    "email": "simon.relet@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "Simon Relet",
+      "email": "simon.relet@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simonrelet/find-a-trip"
+  },
+  "bugs": {
+    "url": "https://github.com/simonrelet/find-a-trip/issues"
+  },
+  "scripts": {
+    "build": "react-scripts build",
+    "build:clean": "run-s clean build",
+    "clean": "rm -rf build coverage",
+    "format": "prettier --write \"**/*.{js,scss,md,html}\"",
+    "lint": "run-s lint:*",
+    "lint:format": "prettier --list-different \"**/*.{js,scss,md,html}\"",
+    "lint:js": "eslint .",
+    "start": "react-scripts start",
+    "test": "react-scripts test"
+  },
   "dependencies": {
+    "query-string": "^6.9.0",
+    "react": "^16.12.0",
+    "react-behave": "^1.1.1",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.3.0",
+    "styled-components": "^4.4.1"
+  },
+  "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-scripts": "3.3.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.19.1"
   },
   "browserslist": {
     "production": [
