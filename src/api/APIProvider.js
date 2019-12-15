@@ -16,6 +16,17 @@ const AUTH_FETCH_OPTIONS = {
 };
 
 export function APIProvider({ children }) {
+  if (process.env.NODE_ENV !== 'production') {
+    if (
+      process.env.REACT_APP_CLIENT_ID == null ||
+      process.env.REACT_APP_CLIENT_SECRET == null
+    ) {
+      throw new Error(
+        'The authentication API requires a client ID and secret. Have a look at the Set up authentication keys section in the README.',
+      );
+    }
+  }
+
   // Use a Ref instead of a state to avoid updates and to make sure the
   // references of `getToken` and `fetchAPI` never change.
   const token = React.useRef(localStorage.getItem(LOCAL_STORAGE_KEY_TOKEN));

@@ -1,4 +1,30 @@
+# Find a Trip
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Run the app locally
+
+1. Install the dependencies with:
+
+```sh
+yarn
+```
+
+2. Set up authentication keys
+
+The authentication API requires a client ID and secret that should be added in the environment file _.env.local_ in the root folder (the _.local_ at the end is important to avoid pushing the values to a public repository, [see more here](https://create-react-app.dev/docs/adding-custom-environment-variables/#adding-development-environment-variables-in-env)):
+
+```sh
+# .env.local
+REACT_APP_CLIENT_ID="client-id"
+REACT_APP_CLIENT_SECRET="client-secret"
+```
+
+3. Start the development server
+
+```sh
+yarn start
+```
 
 ## Available Scripts
 
@@ -27,15 +53,36 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+### `yarn build:clean`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Alias for `yarn clean && yarn run build`.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `yarn clean`
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Delete the generated folders to put the repository in a clean state.
+For now, the folders are _build_ and _coverage_.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### `yarn format`
+
+Format the files using [Prettier](https://prettier.io/).
+For now the targeted files are:
+
+- JavaScript
+- JSON
+- Markdown
+- HTML
+
+### `yarn lint`
+
+Alias for `yarn lint:format && yarn lint:js`.
+
+### `yarn lint:format`
+
+Ensure the files are correctly formatted using [Prettier](https://prettier.io/).
+
+### `yarn lint:js`
+
+Run [ESLint](https://eslint.org/) on the source code.
 
 ## Learn More
 
