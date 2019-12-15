@@ -2,7 +2,7 @@
   "name": "find-a-trip",
   "version": "1.0.0",
   "private": true,
-  "description": "Find a trip.",
+  "description": "Find a trip with BlaBlaCar.",
   "author": {
     "name": "Simon Relet",
     "email": "simon.relet@gmail.com"
