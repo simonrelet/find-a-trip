@@ -8,6 +8,7 @@ export class ErrorBoundary extends React.Component {
   }
 
   componentDidCatch(error, info) {
+    // The error could also be sent to an error tracker like Sentry.
     console.error(error);
     console.error(info);
   }

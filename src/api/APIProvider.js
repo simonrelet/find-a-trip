@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { API_CONTEXT } from './apiContext';
 
-const TOKEN_KEY = 'token';
+const LOCAL_STORAGE_KEY_TOKEN = 'token';
 
-const AUTH_OPTIONS = {
+const AUTH_FETCH_OPTIONS = {
   method: 'post',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
@@ -18,26 +18,26 @@ const AUTH_OPTIONS = {
 export function APIProvider({ children }) {
   // Use a Ref instead of a state to avoid updates and to make sure the
   // references of `getToken` and `fetchAPI` never change.
-  const token = React.useRef(localStorage.getItem(TOKEN_KEY));
+  const token = React.useRef(localStorage.getItem(LOCAL_STORAGE_KEY_TOKEN));
 
   // Gets a new token and save it for later in the local storage.
   const getToken = React.useCallback(async () => {
-    const authResult = await fetch(
+    const result = await fetch(
       process.env.REACT_APP_AUTH_API,
-      AUTH_OPTIONS,
+      AUTH_FETCH_OPTIONS,
     );
 
-    if (!authResult.ok) {
+    if (!result.ok) {
       throw new Error(
-        `Could not get token: ${authResult.statusText || authResult.status}`,
+        `Could not get token: ${result.statusText || result.status}`,
       );
     }
 
-    token.current = (await authResult.json()).access_token;
-    localStorage.setItem(TOKEN_KEY, token.current);
+    token.current = (await result.json()).access_token;
+    localStorage.setItem(LOCAL_STORAGE_KEY_TOKEN, token.current);
   }, []);
 
-  // The fetch wrapper that adds the API token.
+  // The fetch wrapper that adds the API token and update the token when needed.
   const fetchAPI = React.useCallback(
     async (input, { headers = {}, ...init } = {}) => {
       // The actual API call.
@@ -48,23 +48,23 @@ export function APIProvider({ children }) {
         });
       }
 
-      let apiResult = null;
+      let result = null;
 
       // Optimistic API call with the current token.
       if (token.current != null) {
-        apiResult = await fetchWithToken();
+        result = await fetchWithToken();
       }
 
       // When the token is missing or expired, we ask for a new one and retry
       // the API call.
       // We only ask for a token when we need one, i.e. when an API call is
       // made.
-      if (token.current == null || apiResult.status === 401) {
+      if (token.current == null || result.status === 401) {
         await getToken();
-        apiResult = await fetchWithToken();
+        result = await fetchWithToken();
       }
 
-      return apiResult;
+      return result;
     },
     [getToken],
   );

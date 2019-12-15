@@ -1,21 +1,35 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components/macro';
-import { spacingUnit } from '../styles';
+import {
+  CHILDREN_SPACING_SELECTOR,
+  SECONDARY_TEXT_COLOR,
+  SPACING_UNIT,
+} from '../styles';
+import { CityInput } from './CityInput';
 
-const Card = styled.section`
-  padding: ${spacingUnit * 2}em;
-  background-color: white;
-  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.23);
-  border-radius: ${spacingUnit / 2}em;
+const Form = styled.section`
   display: flex;
   align-items: center;
+
+  ${CHILDREN_SPACING_SELECTOR} {
+    margin-left: ${SPACING_UNIT * 2}em;
+  }
 `;
 
 const Field = styled.div`
+  min-width: 0;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  flex: 1;
+
+  ${CHILDREN_SPACING_SELECTOR} {
+    margin-top: ${SPACING_UNIT}em;
+  }
+`;
+
+const Label = styled.label`
+  color: ${SECONDARY_TEXT_COLOR};
 `;
 
 export function SearchForm({
@@ -25,25 +39,21 @@ export function SearchForm({
   setDestination,
 }) {
   return (
-    <Card>
+    <Form>
       <Field>
-        <label htmlFor="departure">Departure</label>
-        <input
-          value={departure}
-          onChange={e => setDeparture(e.target.value)}
-          id="departure"
-        />
+        <Label htmlFor="departure">Departure</Label>
+        <CityInput id="departure" value={departure} onChange={setDeparture} />
       </Field>
 
       <Field>
-        <label htmlFor="destination">Destination</label>
-        <input
-          value={destination}
-          onChange={e => setDestination(e.target.value)}
+        <Label htmlFor="destination">Destination</Label>
+        <CityInput
           id="destination"
+          value={destination}
+          onChange={setDestination}
         />
       </Field>
-    </Card>
+    </Form>
   );
 }
 

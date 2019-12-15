@@ -1,12 +1,12 @@
 import { stringify } from 'query-string';
 
-const DEFAULT_QUERIES = {
+const DEFAULT_SEARCH_QUERIES = {
   _format: 'json',
   locale: 'fr_FR',
   cur: 'EUR',
 };
 
-const DEFAULT_OPTIONS = {
+const DEFAULT_SEARCH_OPTIONS = {
   headers: {
     Accept: 'application/json',
     'Accept-Language': 'fr',
@@ -14,16 +14,17 @@ const DEFAULT_OPTIONS = {
   },
 };
 
-export async function searchTrips({ fetchAPI, departure, destination }) {
+export async function searchTrips({ departure, destination, fetchAPI }) {
   const query = stringify({
-    ...DEFAULT_QUERIES,
+    ...DEFAULT_SEARCH_QUERIES,
     fn: departure,
     tn: destination,
   });
 
-  const url = `${process.env.REACT_APP_TRIP_API}?${query}`;
-
-  const result = await fetchAPI(url, DEFAULT_OPTIONS);
+  const result = await fetchAPI(
+    `${process.env.REACT_APP_TRIP_API}?${query}`,
+    DEFAULT_SEARCH_OPTIONS,
+  );
 
   if (!result.ok) {
     throw new Error(
