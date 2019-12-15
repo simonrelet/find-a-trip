@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TripCard should render the given trip 1`] = `
+<div>
+  <div
+    class="TripCard__Card-sc-1hl03w8-0 jSsuSi"
+  >
+    <div
+      class="TripCard__CardContent-sc-1hl03w8-1 krkXMB"
+    >
+      <div
+        class="TripCard__TripInfo-sc-1hl03w8-4 jDnUQd"
+      >
+        <span
+          class="TripCard__DepartureDate-sc-1hl03w8-3 kCbXuN"
+        >
+          05:00 - Sunday 15th
+        </span>
+        <span>
+          Paris
+           - 
+          Lyon
+        </span>
+      </div>
+      <span
+        class="TripCard__Price-sc-1hl03w8-5 bVihvi"
+      >
+        22 €
+      </span>
+    </div>
+    <div
+      class="TripCard__CardFooter-sc-1hl03w8-2 cgkZLn"
+    >
+      <a
+        class="UserInfo__UserInfoWrapper-bs1fdn-0 crheuZ"
+        href="https://url-to-user-profile.com"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <img
+          alt="John Doe"
+          class="UserInfo__Avatar-bs1fdn-1 kCcKVM"
+          src="https://url-to-user-picture.com"
+        />
+        <span>
+          John Doe
+        </span>
+      </a>
+      <a
+        href="https://url-to-trip.com"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        See more on BlaBlaCar
+      </a>
+    </div>
+  </div>
+</div>
+`;

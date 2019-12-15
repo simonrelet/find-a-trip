@@ -38,5 +38,12 @@ export function UserInfo({ user }) {
 }
 
 UserInfo.propTypes = {
-  user: PropTypes.object.isRequired,
+  user: PropTypes.shape({
+    links: PropTypes.shape({
+      _front: PropTypes.string.isRequired,
+    }).isRequired,
+    has_picture: PropTypes.bool.isRequired,
+    picture: PropTypes.string,
+    display_name: PropTypes.string,
+  }).isRequired,
 };

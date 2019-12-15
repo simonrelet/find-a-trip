@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { API_CONTEXT } from './apiContext';
 
-const LOCAL_STORAGE_KEY_TOKEN = 'token';
+export const LOCAL_STORAGE_KEY_TOKEN = 'token';
 
 const AUTH_FETCH_OPTIONS = {
   method: 'post',

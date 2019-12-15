@@ -98,5 +98,18 @@ export function TripCard({ trip }) {
 }
 
 TripCard.propTypes = {
-  trip: PropTypes.object.isRequired,
+  trip: PropTypes.shape({
+    departure_date: PropTypes.string.isRequired,
+    departure_place: PropTypes.shape({ city_name: PropTypes.string.isRequired })
+      .isRequired,
+    arrival_place: PropTypes.shape({ city_name: PropTypes.string.isRequired })
+      .isRequired,
+    price: PropTypes.shape({
+      string_value: PropTypes.string.isRequired,
+    }).isRequired,
+    user: PropTypes.object.isRequired,
+    links: PropTypes.shape({
+      _front: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
 };
