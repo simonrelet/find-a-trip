@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { API_CONTEXT } from './apiContext';
+import { API_CONTEXT } from '../apiContext';
 
 export const LOCAL_STORAGE_KEY_TOKEN = 'token';
 

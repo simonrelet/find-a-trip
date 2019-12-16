@@ -1,11 +1,11 @@
 import React from 'react';
 import { useAsyncMemo } from 'react-behave';
 import styled from 'styled-components/macro';
-import { useAPI } from '../api/useAPI';
-import { SECONDARY_TEXT_COLOR } from '../styles';
-import { SearchForm } from './SearchForm';
-import { SearchResults } from './SearchResults';
-import { searchTrips } from './searchTrips';
+import { useAPI } from '../../api/useAPI';
+import { SECONDARY_TEXT_COLOR } from '../../styles';
+import { SearchForm } from '../SearchForm';
+import { SearchResults } from '../SearchResults';
+import { searchTrips } from '../searchTrips';
 
 const Separator = styled.hr`
   margin: 0;

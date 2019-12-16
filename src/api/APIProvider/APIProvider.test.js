@@ -1,9 +1,9 @@
 import { render } from '@testing-library/react';
 import React from 'react';
+import { useAPI } from '../useAPI';
 import { APIProvider, LOCAL_STORAGE_KEY_TOKEN } from './APIProvider';
-import { useAPI } from './useAPI';
 
-/** @type {import('./apiContext').APIContextValue} */
+/** @type {import('../apiContext').APIContextValue} */
 let context = null;
 
 function ContextConsumer() {
@@ -11,7 +11,7 @@ function ContextConsumer() {
   return null;
 }
 
-describe('APIProvider', () => {
+describe('<APIProvider />', () => {
   afterEach(() => {
     context = null;
   });

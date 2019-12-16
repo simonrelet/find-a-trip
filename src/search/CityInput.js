@@ -7,7 +7,7 @@ import { SPACING_UNIT } from '../styles';
 const NONE_OPTION_VALUE = 'none';
 
 // It would be better to dynamically fetch this list.
-const CITIES = [
+export const CITIES = [
   'Paris',
   'Lyon',
   'Marseille',
