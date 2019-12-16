@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/find-a-trip/static/js/main.134d06d2.chunk.js",
+    "main.js.map": "/find-a-trip/static/js/main.134d06d2.chunk.js.map",
+    "runtime-main.js": "/find-a-trip/static/js/runtime-main.a5fa04d9.js",
+    "runtime-main.js.map": "/find-a-trip/static/js/runtime-main.a5fa04d9.js.map",
+    "static/js/2.a69c881c.chunk.js": "/find-a-trip/static/js/2.a69c881c.chunk.js",
+    "static/js/2.a69c881c.chunk.js.map": "/find-a-trip/static/js/2.a69c881c.chunk.js.map",
+    "index.html": "/find-a-trip/index.html",
+    "precache-manifest.bbc35f74859d4138afc414db4e91b112.js": "/find-a-trip/precache-manifest.bbc35f74859d4138afc414db4e91b112.js",
+    "service-worker.js": "/find-a-trip/service-worker.js",
+    "static/js/2.a69c881c.chunk.js.LICENSE": "/find-a-trip/static/js/2.a69c881c.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a5fa04d9.js",
+    "static/js/2.a69c881c.chunk.js",
+    "static/js/main.134d06d2.chunk.js"
+  ]
+}
