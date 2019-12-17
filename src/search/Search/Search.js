@@ -43,7 +43,7 @@ export function Search() {
   } else if (searchStatus.error != null) {
     content = <p>{searchStatus.error.message}</p>;
   } else if (searchStatus.pending) {
-    // We sould use a nive placeholder here instead of some text.
+    // We should use a nice placeholder here instead of some text.
     content = <Placeholder>Loading...</Placeholder>;
   } else if (results != null) {
     content = <SearchResults results={results} />;

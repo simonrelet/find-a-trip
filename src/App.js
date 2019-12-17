@@ -1,12 +1,12 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components/macro';
-import { APIProvider } from '../api/APIProvider';
-import { Search } from '../search/Search';
+import { APIProvider } from './api/APIProvider';
+import { Search } from './search/Search';
 import {
   CHILDREN_SPACING_SELECTOR,
   PRIMARY_TEXT_COLOR,
   SPACING_UNIT,
-} from '../styles';
+} from './styles';
 
 const GlobalStyles = createGlobalStyle`
   *,

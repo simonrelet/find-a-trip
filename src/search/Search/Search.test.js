@@ -54,7 +54,7 @@ describe('<Search />', () => {
     await wait();
 
     const departureCity = CITIES[1];
-    const destinationCity = CITIES[1];
+    const destinationCity = CITIES[2];
 
     userEvent.selectOptions(getByLabelText(/departure/i), departureCity);
     userEvent.selectOptions(getByLabelText(/destination/i), destinationCity);

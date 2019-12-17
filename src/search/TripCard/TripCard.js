@@ -2,8 +2,8 @@ import { format, isSameDay, parse } from 'date-fns';
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components/macro';
-import { CHILDREN_SPACING_SELECTOR, SPACING_UNIT } from '../styles';
-import { UserInfo } from './UserInfo';
+import { CHILDREN_SPACING_SELECTOR, SPACING_UNIT } from '../../styles';
+import { UserInfo } from '../UserInfo';
 
 const TODAY = new Date();
 
